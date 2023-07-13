@@ -1,0 +1,98 @@
+[
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/drawable_backgroundcurveorange_svg.xml.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/drawable/backgroundcurveorange_svg.xml"
+    },
+    {
+        "merged": "com.example.sctirdactivites.app-merged_res-42:/font_poppins_bold_italic.ttf.flat",
+        "source": "com.example.sctirdactivites.app-main-44:/font/poppins_bold_italic.ttf"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/drawable_landingpage_svg.xml.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/drawable/landingpage_svg.xml"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/font_poppins_bold.ttf.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/font/poppins_bold.ttf"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/drawable_arrowtoleft.xml.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/drawable/arrowtoleft.xml"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/font_poppins_extrabold_italic.ttf.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/font/poppins_extrabold_italic.ttf"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/xml_backup_rules.xml.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/drawable_arrowtoright.xml.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/drawable/arrowtoright.xml"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/font_poppins.ttf.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/font/poppins.ttf"
+    },
+    {
+        "merged": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-merged_res-42:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/jagu/.gradle/daemon/8.0/com.example.sctirdactivites.app-main-44:/mipmap-mdpi/ic_launcher.webp"
+    }
+]

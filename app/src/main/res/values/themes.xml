@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="Theme.SCTIRDActivites" parent="android:Theme.Material.Light.NoActionBar" >
+        <item name="android:colorPrimaryDark">@color/customPrimary</item>
+        <item name="android:statusBarColor">@color/customPrimary</item>
+    </style>
+</resources>
