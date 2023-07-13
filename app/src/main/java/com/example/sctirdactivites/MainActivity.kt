@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize()
                         .background(color = Color(0xFFFFFFFF)))
                 {
-                    SignInActivity()
+                    HomeActivity()
                 }
 
             }
