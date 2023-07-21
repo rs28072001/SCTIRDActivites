@@ -33,8 +33,11 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 
 
+
+
+
 @Composable
-fun ProjectsView(navController: NavController) {
+fun ProjectsView(navHostController: NavHostController) {
     val cardItems = listOf(
         CardItem("Youth & Sports Development", R.drawable.sports),
         CardItem("Women Empowerment", R.drawable.women),
@@ -49,7 +52,7 @@ fun ProjectsView(navController: NavController) {
                 modifier = Modifier
                     .padding(16.dp)
                     //.shadow(6.dp)
-                    .clickable {onItemClick(navController, cardItem)},
+                    .clickable {onItemClick(navHostController, cardItem)},
                 shape = RoundedCornerShape(40.dp),
                 colors = CardDefaults.cardColors(Color(0xFFE7F9FF)),
                 elevation  = CardDefaults.cardElevation(8.dp),
@@ -81,12 +84,12 @@ fun ProjectsView(navController: NavController) {
 
 
 
-fun onItemClick(navController: NavController, cardItem: CardItem) {
+fun onItemClick(navHostController: NavHostController, cardItem: CardItem) {
     when (cardItem.name) {
-        "Youth & Sports Development" -> navController.navigate(ScreenNav.TitleBar.route)
-        "Women Empowerment" -> navController.navigate(ScreenNav.WelcomeActivity.route)
-        "Agriculture Sector" -> navController.navigate(ScreenNav.DistrictCardsFlowchartSCF.route)
-        "Recent Activities" -> navController.navigate(ScreenNav.WomenFlowchartSCF.route)
+        "Youth & Sports Development" -> navHostController.navigate(ScreenNav.TitleBar.route)
+        "Women Empowerment" -> navHostController.navigate(ScreenNav.WelcomeActivity.route)
+        "Agriculture Sector" -> navHostController.navigate(ScreenNav.DistrictCardsFlowchartSCF.route)
+        "Recent Activities" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
         else -> {
             // Handle other cases if needed
         }

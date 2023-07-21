@@ -107,7 +107,7 @@ fun TitleBar(navHostController: NavHostController) {
                 Spacer(Modifier.height(100.dp))
                 MainImage(Modifier.height(199.dp))
                 Spacer(Modifier.height(60.dp))
-                ProjectsView(navController: NavController)
+                ProjectsView()
             }
         }
     }
