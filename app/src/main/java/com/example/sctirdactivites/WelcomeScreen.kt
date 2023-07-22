@@ -5,14 +5,12 @@ import WomenFlowchartSCF
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -71,19 +69,19 @@ fun TitleBar(navHostController: NavHostController) {
                 //Icon(Icons.Default.AccountCircle, contentDescription = "User", tint = Orange,)
                 Divider()
                 NavigationDrawerItem(
-                    icon = {Icon(Icons.Default.AccountBox, contentDescription = "AccountBox", tint = Color.Blue,) },
+                    icon = {Icon(Icons.Default.AccountBox, contentDescription = "AccountBox", tint = Color.Blue) },
                     label = {Text(text = "Login") },
                     selected = false,
                     onClick = { navHostController.navigate(ScreenNav.WelcomeActivity.route) }
                 )
                 NavigationDrawerItem(
-                    icon = {Icon(Icons.Default.Notifications, contentDescription = "Notifications", tint = Color.Red,) },
+                    icon = {Icon(Icons.Default.Notifications, contentDescription = "Notifications", tint = Color.Red) },
                     label = {Text(text = "Notifications") },
                     selected = false,
                     onClick = { /*TODO*/ }
                 )
                 NavigationDrawerItem(
-                    icon = {Icon(Icons.Default.Settings, contentDescription = "Settings", tint = Color.DarkGray,) },
+                    icon = {Icon(Icons.Default.Settings, contentDescription = "Settings", tint = Color.DarkGray) },
                     label = {Text(text = "Settings") },
                     selected = false,
                     onClick = { /*TODO*/ }
@@ -146,8 +144,6 @@ sealed class ScreenNav(val route: String) {
     object WelcomeActivity : ScreenNav("Second")
     object DistrictCardsFlowchartSCF : ScreenNav("Third")
     object WomenFlowchartSCF : ScreenNav("Forth")
-
-
 }
 
 

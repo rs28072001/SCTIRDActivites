@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize()
                         .background(color = Color(0xFFFFFFFF)))
                 {
-                    NavigationView()
+                    UiDashboard()
                     //HomeActivity()
                     //DrawerContent()
                 }
