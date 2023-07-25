@@ -1,6 +1,5 @@
 package com.example.sctirdactivites
 
-import android.graphics.fonts.FontFamily
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
@@ -9,7 +8,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,7 +22,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -40,10 +37,8 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -51,7 +46,7 @@ import androidx.navigation.NavController
 import com.example.sctirdactivites.ui.theme.Orange
 
 
-@Preview
+
 @Composable
 fun UiDashboard() {
     Box(
@@ -60,9 +55,84 @@ fun UiDashboard() {
     ) {
         DashboardCircle()
         ProcessCircle()
+    }
+}
+@Composable
+fun ProcessCircle(){
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 40.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    )
+    {
+        CircularProgressbar3()
+        Spacer(modifier = Modifier.height(0.dp))
+        DashboardView()
+        Spacer(modifier = Modifier.height(12.dp))
+        //RegistrationButton(onClick = {})
+    }
+}
+@Composable
+fun DashboardView() {
+    val dashItems = listOf(
+        CardItem("Send Your Report", R.drawable.sendreport),
+        CardItem("See Report & Download", R.drawable.seereport),
+        CardItem("Complete User Profile", R.drawable.id),
+        CardItem("Complete Document KYC", R.drawable.kyc),
+        CardItem("Register New Participant", R.drawable.adduser),
+        CardItem("Participants Details", R.drawable.userlist)
+    )
+
+    LazyVerticalGrid(columns = GridCells.Fixed(2)) {
+        items(dashItems.size) { index ->
+            val cardItem = dashItems[index]
+            Card(
+                modifier = Modifier
+                    .padding(16.dp)
+                    //.shadow(6.dp)
+                    .clickable {onItemClick(cardItem)},
+                shape = RoundedCornerShape(40.dp),
+                colors = CardDefaults.cardColors(Color(0xFFFAF1D5)),
+                elevation  = CardDefaults.cardElevation(8.dp),
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    val image = painterResource(id = cardItem.imageResId)
+                    Image(
+                        painter = image,
+                        contentDescription = cardItem.name,
+                        modifier = Modifier.size(64.dp)
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = cardItem.name,
+                        style = TextStyle(
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp
+                        ),
+                        textAlign = TextAlign.Center
+                    )
+                }
+            }
         }
     }
+}
 
+fun onItemClick(cardItem: CardItem) {
+    when (cardItem.name) {
+        //"Send Your Report" -> navHostController.navigate(ScreenNav.SendDailyReport.route)
+        //"" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
+        //"" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
+        //"Recent Activities" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
+        else -> {
+            // Handle other cases if needed
+        }
+    }
+}
 
 
 @Composable
@@ -85,23 +155,7 @@ fun DashboardCircle() {
     }
 }
 
-@Composable
-fun ProcessCircle(){
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 40.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    )
-    {
-        CircularProgressbar3()
-        Spacer(modifier = Modifier.height(0.dp))
-        DashboardView()
-        Spacer(modifier = Modifier.height(12.dp))
-        //RegistrationButton(onClick = {})
-    }
-}
+
 
 
 @Composable
@@ -203,103 +257,6 @@ private fun ButtonProgressbar(
     }
 }
 
-@Composable
-fun DashboardView() {
-    val dashItems = listOf(
-        CardItem("Send Your Report", R.drawable.sendreport),
-        CardItem("See Report & Download", R.drawable.seereport),
-        CardItem("Complete User Profile", R.drawable.id),
-        CardItem("Complete Document KYC", R.drawable.kyc),
-        CardItem("Register New Participant", R.drawable.adduser),
-        CardItem("Participants Details", R.drawable.userlist)
-    )
-
-    LazyVerticalGrid(columns = GridCells.Fixed(2)) {
-        items(dashItems.size) { index ->
-            val cardItem = dashItems[index]
-            Card(
-                modifier = Modifier
-                    .padding(16.dp)
-                    //.shadow(6.dp)
-                    .clickable {onItemClick(cardItem)},
-                shape = RoundedCornerShape(40.dp),
-                colors = CardDefaults.cardColors(Color(0xFFFAF1D5)),
-                elevation  = CardDefaults.cardElevation(8.dp),
-            ) {
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    val image = painterResource(id = cardItem.imageResId)
-                    Image(
-                        painter = image,
-                        contentDescription = cardItem.name,
-                        modifier = Modifier.size(64.dp)
-                    )
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Text(
-                        text = cardItem.name,
-                        style = TextStyle(
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 16.sp
-                        ),
-                        textAlign = TextAlign.Center
-                    )
-                }
-            }
-        }
-    }
-}
 
 
-fun onItemClick(cardItem: CardItem) {
-    when (cardItem.name) {
-       // "Youth & Sports Development" -> navHostController.navigate(ScreenNav.DistrictCardsFlowchartSCF.route)
-       // "Women Empowerment" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
-        // "Agriculture Sector" -> navHostController.navigate(ScreenNav.DistrictCardsFlowchartSCF.route)
-        //"Recent Activities" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
-        else -> {
-            // Handle other cases if needed
-        }
-    }
-}
 
-data class DashItems(val name: String, val imageResId: Int)
-
-
-@Composable
-fun RegistrationButton(onClick: () -> Unit) {
-    Button(
-        onClick = onClick,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 20.dp),
-        shape = MaterialTheme.shapes.extraLarge,
-        colors = ButtonDefaults.buttonColors(Orange)
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(45.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ){
-            Text(
-                text = "Add New Participant",
-                style = TextStyle(
-                    color = Color.White,
-                    fontSize = 16.sp,
-                    fontWeight =  FontWeight.SemiBold,
-                    textAlign = TextAlign.Center
-                )
-            )
-            Image(
-                painter = painterResource(id = R.drawable.arrowtoright),
-                contentDescription = "Arrow",
-                contentScale = ContentScale.FillWidth
-            )
-
-        }
-
-    }
-}

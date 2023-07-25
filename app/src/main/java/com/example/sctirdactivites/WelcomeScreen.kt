@@ -5,9 +5,12 @@ import WomenFlowchartSCF
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -132,9 +135,11 @@ fun NavigationView(){
     val navHostController = rememberNavController()
     NavHost(navController = navHostController, startDestination = ScreenNav.TitleBar.route) {
         composable(ScreenNav.TitleBar.route){TitleBar(navHostController)}
-        composable(ScreenNav.WelcomeActivity.route){WelcomeActivity()}
+        composable(ScreenNav.WelcomeActivity.route){WelcomeActivity(navHostController)}
         composable(ScreenNav.DistrictCardsFlowchartSCF.route){DistrictCardsFlowchartSCF()}
         composable(ScreenNav.WomenFlowchartSCF.route){WomenFlowchartSCF()}
+        composable(ScreenNav.UiDashboard.route){UiDashboard()}
+        composable(ScreenNav.SendDailyReport.route){SendDailyReport()}
 
     }
 }
@@ -144,6 +149,9 @@ sealed class ScreenNav(val route: String) {
     object WelcomeActivity : ScreenNav("Second")
     object DistrictCardsFlowchartSCF : ScreenNav("Third")
     object WomenFlowchartSCF : ScreenNav("Forth")
+    object UiDashboard : ScreenNav("Five")
+    object SendDailyReport : ScreenNav("Six")
+
 }
 
 
@@ -198,13 +206,18 @@ fun onItemClick(cardItem: CardItem, navHostController: NavController) {
     when (cardItem.name) {
         "Youth & Sports Development" -> navHostController.navigate(ScreenNav.DistrictCardsFlowchartSCF.route)
         "Women Empowerment" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
-       // "Agriculture Sector" -> navHostController.navigate(ScreenNav.DistrictCardsFlowchartSCF.route)
+        "Send Your Report" -> navHostController.navigate(ScreenNav.SendDailyReport.route)
+        "" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
+        "" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
+        "" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
+        // "Agriculture Sector" -> navHostController.navigate(ScreenNav.DistrictCardsFlowchartSCF.route)
         //"Recent Activities" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
         else -> {
             // Handle other cases if needed
         }
     }
 }
+
 
 data class CardItem(val name: String, val imageResId: Int)
 

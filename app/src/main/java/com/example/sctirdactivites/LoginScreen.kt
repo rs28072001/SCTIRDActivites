@@ -57,11 +57,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.sctirdactivites.ui.theme.Orange
 
-@Preview
 @Composable
-fun WelcomeActivity() {
+fun WelcomeActivity(navHostController: NavController) {
             Box(
                 modifier = Modifier
                     .fillMaxSize(),
@@ -91,7 +91,7 @@ fun WelcomeActivity() {
             Spacer(Modifier.height(40.dp))
             PasswordTextField()
             Spacer(Modifier.height(40.dp))
-            LoginButton(onClick = {})
+            LoginButton(onClick = {navHostController.navigate(ScreenNav.UiDashboard.route)})
             Spacer(Modifier.height(20.dp))
             SignUpText()
             Spacer(Modifier.height(10.dp))
@@ -108,12 +108,13 @@ fun StyledText(str: String,horizontalPadding: Dp) {
         fontSize = 32.sp,
         fontWeight = FontWeight.Bold,
         letterSpacing = 2.sp,
-        textAlign = TextAlign.Center
-    ),
+        textAlign = TextAlign.Center),
     color = Color(0xFFFFFFFF),
     modifier = Modifier.padding(horizontal = horizontalPadding)
 )
 }
+
+
 @Composable
 fun DisplayItems() {
     Column(
