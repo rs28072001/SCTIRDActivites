@@ -138,8 +138,12 @@ fun NavigationView(){
         composable(ScreenNav.WelcomeActivity.route){WelcomeActivity(navHostController)}
         composable(ScreenNav.DistrictCardsFlowchartSCF.route){DistrictCardsFlowchartSCF()}
         composable(ScreenNav.WomenFlowchartSCF.route){WomenFlowchartSCF()}
-        composable(ScreenNav.UiDashboard.route){UiDashboard()}
+        composable(ScreenNav.UiDashboard.route){UiDashboard(navHostController)}
         composable(ScreenNav.SendDailyReport.route){SendDailyReport()}
+        composable(ScreenNav.BasicDetails.route){BasicDetails()}
+        composable(ScreenNav.RegisterParticipant.route){RegisterParticipant()}
+        composable(ScreenNav.DocumentKYC.route){DocumentKYC()}
+
 
     }
 }
@@ -151,7 +155,9 @@ sealed class ScreenNav(val route: String) {
     object WomenFlowchartSCF : ScreenNav("Forth")
     object UiDashboard : ScreenNav("Five")
     object SendDailyReport : ScreenNav("Six")
-
+    object BasicDetails : ScreenNav("Seven")
+    object RegisterParticipant : ScreenNav("Eight")
+    object DocumentKYC : ScreenNav("Nine")
 }
 
 
@@ -206,10 +212,10 @@ fun onItemClick(cardItem: CardItem, navHostController: NavController) {
     when (cardItem.name) {
         "Youth & Sports Development" -> navHostController.navigate(ScreenNav.DistrictCardsFlowchartSCF.route)
         "Women Empowerment" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
-        "Send Your Report" -> navHostController.navigate(ScreenNav.SendDailyReport.route)
-        "" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
-        "" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
-        "" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
+        //"Send Your Report" -> navHostController.navigate(ScreenNav.SendDailyReport.route)
+        //"" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
+        //"" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
+        //"" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
         // "Agriculture Sector" -> navHostController.navigate(ScreenNav.DistrictCardsFlowchartSCF.route)
         //"Recent Activities" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
         else -> {

@@ -43,22 +43,23 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.sctirdactivites.ui.theme.Orange
 
 
 
 @Composable
-fun UiDashboard() {
+fun UiDashboard(navHostController: NavHostController) {
     Box(
         modifier = Modifier
             .fillMaxSize(),
     ) {
         DashboardCircle()
-        ProcessCircle()
+        ProcessCircle(navHostController = navHostController)
     }
 }
 @Composable
-fun ProcessCircle(){
+fun ProcessCircle(navHostController: NavHostController){
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -69,13 +70,13 @@ fun ProcessCircle(){
     {
         CircularProgressbar3()
         Spacer(modifier = Modifier.height(0.dp))
-        DashboardView()
+        DashboardView(navHostController = navHostController)
         Spacer(modifier = Modifier.height(12.dp))
         //RegistrationButton(onClick = {})
     }
 }
 @Composable
-fun DashboardView() {
+fun DashboardView(navHostController: NavHostController) {
     val dashItems = listOf(
         CardItem("Send Your Report", R.drawable.sendreport),
         CardItem("See Report & Download", R.drawable.seereport),
@@ -92,7 +93,7 @@ fun DashboardView() {
                 modifier = Modifier
                     .padding(16.dp)
                     //.shadow(6.dp)
-                    .clickable {onItemClick(cardItem)},
+                    .clickable {onItemClick(cardItem,navHostController)},
                 shape = RoundedCornerShape(40.dp),
                 colors = CardDefaults.cardColors(Color(0xFFFAF1D5)),
                 elevation  = CardDefaults.cardElevation(8.dp),
@@ -122,12 +123,12 @@ fun DashboardView() {
     }
 }
 
-fun onItemClick(cardItem: CardItem) {
+fun onItemClick(cardItem: CardItem,navHostController: NavHostController) {
     when (cardItem.name) {
-        //"Send Your Report" -> navHostController.navigate(ScreenNav.SendDailyReport.route)
-        //"" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
-        //"" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
-        //"Recent Activities" -> navHostController.navigate(ScreenNav.WomenFlowchartSCF.route)
+        "Send Your Report" -> navHostController.navigate(ScreenNav.SendDailyReport.route)
+        "Complete User Profile" -> navHostController.navigate(ScreenNav.BasicDetails.route)
+        "Complete Document KYC" -> navHostController.navigate(ScreenNav.DocumentKYC.route)
+        "Register New Participant" -> navHostController.navigate(ScreenNav.RegisterParticipant.route)
         else -> {
             // Handle other cases if needed
         }

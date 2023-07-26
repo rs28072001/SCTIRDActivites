@@ -68,6 +68,9 @@ fun DocumentKYC() {
     // MutableState to track if the form is submitted
     var isFormSubmitted by remember { mutableStateOf(false) }
 
+    // Define a state variable to keep track of image upload
+    var isImageUploaded by remember { mutableStateOf(false) }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -79,35 +82,35 @@ fun DocumentKYC() {
         // Button to launch the Aadhaar Image picker
         Button(
             onClick = { aadhaarImagesLauncher.launch("image/*") },
-            modifier = Modifier.height(100.dp).width(100.dp).clip(RoundedCornerShape(100.dp)),
-            colors = ButtonDefaults.buttonColors(Color(0xFF9579FC))
+            modifier = Modifier.width(200.dp).clip(RoundedCornerShape(50.dp)),
+            colors = ButtonDefaults.buttonColors(if (isImageUploaded) Color(0xFF56E737) else Color(0xFF9579FC))
         ) {
-            Text("Aadhaar Card Upload", color = Color.White, fontWeight = FontWeight.Bold)
+            Text("Aadhaar Card", color = Color.White, fontWeight = FontWeight.Bold)
 
         }
 
         // Button to launch the Pan Card image picker
         Button(
-            onClick = { panLauncher.launch("image/*") },
-            modifier = Modifier.height(100.dp).width(100.dp).clip(RoundedCornerShape(100.dp)),
-            colors = ButtonDefaults.buttonColors(Color(0xFF9579FC))
+            onClick = {
+                panLauncher.launch("image/*")
+                isImageUploaded = true },
+            modifier = Modifier.width(200.dp).clip(RoundedCornerShape(50.dp)),
+            colors = ButtonDefaults.buttonColors(if (isImageUploaded) Color(0xFF56E737) else Color(0xFF9579FC))
         ) {
-            Text("PAN Card Upload", color = Color.White, fontWeight = FontWeight.Bold)
+            Text("PAN Card", color = Color.White, fontWeight = FontWeight.Bold)
 
         }
-
         // Button to launch the Bank image picker
         Button(
             onClick = { bankLauncher.launch("image/*") },
-            modifier = Modifier.height(100.dp).width(100.dp).clip(RoundedCornerShape(100.dp)),
-            colors = ButtonDefaults.buttonColors(Color(0xFF9579FC))
+            modifier = Modifier.width(200.dp).clip(RoundedCornerShape(50.dp)),
+            colors = ButtonDefaults.buttonColors(if (isImageUploaded) Color(0xFF56E737) else Color(0xFF9579FC))
         ) {
-            Text("Bank Passbook / Cancelled Cheque Upload", color = Color.White, fontWeight = FontWeight.Bold)
+            Text("Bank Passbook", color = Color.White, fontWeight = FontWeight.Bold)
         }
 
-
         // Display selected images
-        if (aadhaarImages.isNotEmpty()) {
+        if (aadhaarImages.isNotEmpty() || panImages.isNotEmpty() || bankImages.isNotEmpty()) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -116,6 +119,26 @@ fun DocumentKYC() {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 for (imageUri in aadhaarImages) {
+                    Image(
+                        painter = rememberImagePainter(data = imageUri),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(100.dp)
+                            .aspectRatio(1f),
+                        contentScale = ContentScale.Crop,
+                    )
+                }
+                for (imageUri in panImages) {
+                    Image(
+                        painter = rememberImagePainter(data = imageUri),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(100.dp)
+                            .aspectRatio(1f),
+                        contentScale = ContentScale.Crop,
+                    )
+                }
+                for (imageUri in bankImages) {
                     Image(
                         painter = rememberImagePainter(data = imageUri),
                         contentDescription = null,
@@ -139,7 +162,8 @@ fun DocumentKYC() {
                 painter = painterResource(id = R.drawable.arrowtoright),
                 contentDescription = "Arrow",
                 contentScale = ContentScale.FillWidth
-            )}
+            )
+        }
     }
 }
 
