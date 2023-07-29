@@ -48,6 +48,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
@@ -59,6 +60,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.sctirdactivites.ui.theme.Orange
+
 
 @Composable
 fun WelcomeActivity(navHostController: NavController) {
@@ -80,14 +82,16 @@ fun WelcomeActivity(navHostController: NavController) {
             }
 
         Column(
-            modifier = Modifier.fillMaxSize().padding(0.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(0.dp),
             verticalArrangement = Arrangement.Bottom,
         ) {
             DisplayItems()
             Spacer(Modifier.height(40.dp))
             MainImage(Modifier.height(190.dp))
             Spacer(Modifier.height(40.dp))
-            SimpleOutlinedTextFieldSample()
+            LoginTextField()
             Spacer(Modifier.height(40.dp))
             PasswordTextField()
             Spacer(Modifier.height(40.dp))
@@ -221,7 +225,7 @@ fun SignUpText(){
             color = MaterialTheme.colorScheme.secondary,
             textDecoration = TextDecoration.None
             )) {
-            append("Or Create An Account")
+            append("Or Join Us ")
         }
     }
     fun handleClick() {
@@ -246,8 +250,9 @@ fun SignUpText(){
 
 
 
+
 @Composable
-fun SimpleOutlinedTextFieldSample() {
+fun LoginTextField() {
     var text by remember { mutableStateOf("") }
     OutlinedTextField(
         value = text,
@@ -258,10 +263,11 @@ fun SimpleOutlinedTextFieldSample() {
             Icon(imageVector = Icons.Default.Phone,
                 contentDescription = "Phone Icon") },
         placeholder = { Text(text = "Enter your Mobile Number") },
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number,imeAction = ImeAction.Next),
         modifier = Modifier.padding(horizontal = 50.dp)
     )
 }
+
 
 @Composable
 fun PasswordTextField() {
@@ -272,14 +278,14 @@ fun PasswordTextField() {
         label = { Text("Password") },
         trailingIcon = {
             Icon(imageVector = Icons.Default.Lock,
-                contentDescription = "Person Icon") },
+                contentDescription = "Lock Icon") },
         placeholder = { Text(text = "Enter your Password") },
         visualTransformation = PasswordVisualTransformation(),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password,imeAction = ImeAction.Done),
         modifier = Modifier.padding(horizontal = 50.dp)
-
     )
 }
+
 
 
 @Composable
@@ -288,7 +294,6 @@ fun OrangeBackGroundCircle() {
         modifier = Modifier
             .fillMaxHeight()
             .fillMaxWidth(),
-
         contentAlignment = Alignment.TopCenter
     ) {
         Image(

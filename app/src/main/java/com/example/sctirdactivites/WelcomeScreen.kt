@@ -92,7 +92,8 @@ fun TitleBar(navHostController: NavHostController) {
 
             }
         },
-    ) {
+    )
+    {
         Scaffold(
             topBar = { TopAppBar(title = { Text("Subhash Chandra Foundation",color = Orange, fontWeight = FontWeight.Bold) },
                     navigationIcon = {IconButton(onClick = {
