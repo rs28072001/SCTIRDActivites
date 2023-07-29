@@ -262,7 +262,7 @@ fun LoginTextField() {
         trailingIcon = {
             Icon(imageVector = Icons.Default.Phone,
                 contentDescription = "Phone Icon") },
-        placeholder = { Text(text = "Enter your Mobile Number") },
+        placeholder = { Text(text = "Enter Your Mobile Number") },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number,imeAction = ImeAction.Next),
         modifier = Modifier.padding(horizontal = 50.dp)
     )
@@ -279,7 +279,7 @@ fun PasswordTextField() {
         trailingIcon = {
             Icon(imageVector = Icons.Default.Lock,
                 contentDescription = "Lock Icon") },
-        placeholder = { Text(text = "Enter your Password") },
+        placeholder = { Text(text = "Enter Your Password") },
         visualTransformation = PasswordVisualTransformation(),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password,imeAction = ImeAction.Done),
         modifier = Modifier.padding(horizontal = 50.dp)
